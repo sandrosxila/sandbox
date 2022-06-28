@@ -4,7 +4,7 @@ type Props = {
     onOpenClick: () => void
 }
 
-const OpenMenu = ({onOpenClick}: Props) => {
+const Open = ({onOpenClick}: Props) => {
 
     const style: React.CSSProperties = {
         all: 'unset',
@@ -26,4 +26,4 @@ const OpenMenu = ({onOpenClick}: Props) => {
     );
 };
 
-export default OpenMenu;
+export default Open;
