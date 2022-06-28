@@ -1,5 +1,5 @@
 import React from 'react';
-import Hamburger from './Hamburger';
+import Hamburger from './HamburgerMenu';
 
 
 function App() {

@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
-import CloseHamburger from './CloseHamburger';
+import Close from './Close';
 
 type Props = {
     isOpen: boolean,
@@ -9,7 +9,7 @@ type Props = {
     children: React.ReactNode
 }
 
-const HamburgerMenu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendered, translationTime }: Props) => {
+const Menu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendered, translationTime }: Props) => {
 
 
     const [show, setShow] = useState(isOpen);
@@ -41,7 +41,7 @@ const HamburgerMenu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendere
                 isOpen &&
                 <div style={{ position: 'absolute', overflow: 'hidden', right: '0', top: '0' }}>
                     <div style={style}>
-                        <CloseHamburger setHamburgerOpen={setHamburgerOpen} setShow={setShow} transitionTime={translationTime}/>
+                        <Close setHamburgerOpen={setHamburgerOpen} setShow={setShow} transitionTime={translationTime} />
                         {children}
                     </div>
                 </div>
@@ -50,4 +50,4 @@ const HamburgerMenu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendere
     )
 }
 
-export default HamburgerMenu
+export default Menu

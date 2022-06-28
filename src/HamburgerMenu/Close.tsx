@@ -6,9 +6,10 @@ type Props = {
     transitionTime: number
 }
 
-const CloseHamburger = ({ setShow, setHamburgerOpen, transitionTime }: Props) => {
+const Close = ({ setShow, setHamburgerOpen, transitionTime }: Props) => {
 
     const style: React.CSSProperties = {
+        all: 'unset',
         position: 'absolute',
         overflow: 'hidden',
         right: '0',
@@ -26,18 +27,18 @@ const CloseHamburger = ({ setShow, setHamburgerOpen, transitionTime }: Props) =>
     }
 
     useEffect(() => {
-        return () =>{
-            if(timer.current){
+        return () => {
+            if (timer.current) {
                 clearTimeout(timer.current)
             }
         }
     }, [])
 
     return (
-        <div style={style} onClick = { onCloseClick }>
+        <button style={style} onClick={onCloseClick}>
             X
-        </div>
+        </button>
     )
 }
 
-export default CloseHamburger
+export default Close

@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useRef } from 'react';
 import { useState } from 'react';
-const OpenMenu = React.lazy(() => import('./OpenMenu'));
-const HamburgerMenu = React.lazy(() => import('./HamburgerMenu'));
+const OpenMenu = React.lazy(() => import('../OpenMenu'));
+const HamburgerMenu = React.lazy(() => import('./Menu'));
 
 type Props = {
     translationTime?: number,
