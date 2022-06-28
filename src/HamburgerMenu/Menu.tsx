@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Close from './Close';
 
 type Props = {
@@ -15,8 +15,8 @@ const Menu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendered, transl
     const [show, setShow] = useState(isOpen);
 
     useLayoutEffect(() => {
-        setHamburgerRendered(p => !p)
-    }, [setHamburgerRendered])
+        setHamburgerRendered(p => !p);
+    }, [setHamburgerRendered]);
 
     useEffect(() => {
         const timer = setTimeout(() => setShow(isOpen), 0);
@@ -33,7 +33,7 @@ const Menu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendered, transl
         border: '1px solid black',
         transform: !show ? 'translateX(100%)' : 'translateX(0%)',
         transition: `all ${translationTime}ms ease-in-out`
-    }
+    };
 
     return (
         <>
@@ -47,7 +47,7 @@ const Menu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendered, transl
                 </div>
             }
         </>
-    )
-}
+    );
+};
 
-export default Menu
+export default Menu;

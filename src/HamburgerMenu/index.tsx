@@ -29,24 +29,27 @@ const Hamburger = ({ children, translationTime = 150 }: Props) => {
         else {
             setHamburgerOpen(p => !p);
         }
-    }
+    };
 
     return (
-        <Suspense fallback={<></>}>
+        <>
             <OpenMenu onOpenClick={onOpenClick} />
-            {
-                loadHamburgerMenu &&
-                <HamburgerMenu
-                    isOpen={hamburgerOpen}
-                    setHamburgerOpen={setHamburgerOpen}
-                    setHamburgerRendered={setHamburgerRendered}
-                    translationTime={translationTime}
-                >
-                    {children}
-                </HamburgerMenu>
-            }
-        </Suspense>
-    )
-}
+            <Suspense fallback={<></>}>
 
-export default Hamburger
+                {
+                    loadHamburgerMenu &&
+                    <HamburgerMenu
+                        isOpen={hamburgerOpen}
+                        setHamburgerOpen={setHamburgerOpen}
+                        setHamburgerRendered={setHamburgerRendered}
+                        translationTime={translationTime}
+                    >
+                        {children}
+                    </HamburgerMenu>
+                }
+            </Suspense>
+        </>
+    );
+};
+
+export default Hamburger;

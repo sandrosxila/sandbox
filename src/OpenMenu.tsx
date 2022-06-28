@@ -7,6 +7,7 @@ type Props = {
 const OpenMenu = ({onOpenClick}: Props) => {
 
     const style: React.CSSProperties = {
+        all: 'unset',
         position: 'absolute',
         background: 'white',
         borderRadius: '50%',
@@ -17,13 +18,12 @@ const OpenMenu = ({onOpenClick}: Props) => {
         margin: '2rem',
         border: '1px solid black',
         cursor: 'pointer'
-    }
+    };
 
     return (
-        <div onClick={onOpenClick} style={style}>
-            
-        </div>
-    )
-}
+        <button onClick={onOpenClick} style={style}>
+        </button>
+    );
+};
 
-export default OpenMenu
+export default OpenMenu;

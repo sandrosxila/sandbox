@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 
 type Props = {
     setHamburgerOpen: React.Dispatch<React.SetStateAction<boolean>>,
@@ -17,14 +17,14 @@ const Close = ({ setShow, setHamburgerOpen, transitionTime }: Props) => {
         margin: '2rem',
         cursor: 'pointer',
         userSelect: 'none'
-    }
+    };
 
     const timer = useRef<null | NodeJS.Timer>(null);
 
     const onCloseClick = () => {
         timer.current = setTimeout(() => setHamburgerOpen(p => !p), transitionTime);
         setShow(p => !p);
-    }
+    };
 
     useEffect(() => {
         return () => {
@@ -32,13 +32,13 @@ const Close = ({ setShow, setHamburgerOpen, transitionTime }: Props) => {
                 clearTimeout(timer.current)
             }
         }
-    }, [])
+    }, []);
 
     return (
         <button style={style} onClick={onCloseClick}>
             X
         </button>
-    )
-}
+    );
+};
 
-export default Close
+export default Close;
