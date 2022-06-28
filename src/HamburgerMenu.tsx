@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import CloseHamburger from './CloseHamburger';
 
 type Props = {
     isOpen: boolean,
     setHamburgerOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    setHamburgerRendered: React.Dispatch<React.SetStateAction<boolean>>,
+    translationTime: number,
     children: React.ReactNode
 }
 
-const HamburgerMenu = ({ isOpen, setHamburgerOpen, children }: Props) => {
+const HamburgerMenu = ({ isOpen, setHamburgerOpen, children, setHamburgerRendered, translationTime }: Props) => {
 
-    const translationTime = 150;
 
     const [show, setShow] = useState(isOpen);
+
+    useLayoutEffect(() => {
+        setHamburgerRendered(p => !p)
+    }, [setHamburgerRendered])
 
     useEffect(() => {
         const timer = setTimeout(() => setShow(isOpen), 0);
